@@ -12,7 +12,7 @@ function classNames(...classes) {
 }
 
 const navigation = [
-    { id:1 ,name: 'Projects', href: '/educate' },
+    { id:1 ,name: 'Projects', href: '/projects' },
     { id:2 ,name: 'Ranking', href: '#Hackathons' },
     { id:3 ,name: 'Articles', href: '#Activities' },
 
@@ -28,7 +28,7 @@ const Header = () =>{
     return (
         <header>
             <Popover className="relative bg-white  ">
-                <div className="flex  fixed z-10 inset-x-0  bg-black bg-opacity-85  transition duration-700 mb-10 pl-5 mb-5 justify-between items-center  p-3 md:p-3 sm:px-6 lg:justify-end md:space-x-10 lg:px-10 xl:px-24 2xl:px-48 items-center ">
+                <div className="flex  fixed z-10 inset-x-0  bg-black bg-opacity-85  transition duration-700 mb-10 pl-5 mb-5 justify-between items-center  p-2 sm:px-6 lg:justify-end md:space-x-10 lg:px-10 xl:px-24 2xl:px-48 items-center ">
 
                     <div className=" flex  justify-between lg:justify-start ">
                         <div className="flex justify-start  ">
@@ -37,7 +37,7 @@ const Header = () =>{
                                     <span className="sr-only">Workflow</span>
                                     <img
                                         className="w-full"
-                                        src="/Web3GamesLogo2-01.svg"
+                                        src="/AWESOME W3G1.svg"
                                         alt=""
                                     />
                                 </a>
@@ -50,15 +50,30 @@ const Header = () =>{
                         {navigation.map((item) => (
                             <div key={item.name}>
                                 <Link  href={item.href}>
-                                    <a  className={classNames(router.pathname == `/${item.href}` ? 'text-blue border-b' : ''," py-2.5  leading-5 text-center   font-semibold text-white ")}>
-                                        <div  className=''>
+                                    <a  className={classNames(router.pathname == `${item.href}` ? 'text-blue border-b text-transparent border-b-pink-500' : '',
+                                        " py-2.5  leading-5 text-center   font-semibold text-white  hover:text-transparent bg-clip-text    bg-gradient-to-r from-pink-500  to-purple-500")}>
                                             {item.name}
-                                        </div>
 
                                     </a>
                                 </Link>
                             </div>
+
                         ))}
+                        <Link href="https://twitter.com/web3games">
+                            <a>
+                        <div className="flex py-2.5  leading-5 text-center   font-semibold text-white items-center ">
+                            <div className="text-2xl mr-1 bg-clip-text text-transparent bg-gradient-to-r from-pink-500  to-purple-500">
+                                <i className="fa fa-twitter text-2xl" aria-hidden="true"></i>
+                            </div>
+                            <div className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500  to-purple-500">
+                                Twitter
+                            </div>
+                            <div className=" ml-2 bg-gradient-to-r from-pink-500  to-purple-500 rounded-md -mt-3 text-sm px-1">
+                                FOLLOW
+                            </div>
+                        </div>
+                            </a>
+                        </Link>
                     </Tab.Group>
 
                     <div className="hidden lg:flex w-full justify-end items-center">
@@ -98,7 +113,7 @@ const Header = () =>{
                                         <div>
                                             <img
                                                 className=" w-full"
-                                                src="/Web3Games Logo.svg"
+                                                src="/AWESOME W3G1.svg"
                                                 alt="Workflow"
                                             />
                                         </div>
