@@ -364,7 +364,7 @@ const Ecosystem = () =>{
     const ecosystems = [
         {
 
-            ecosystem:"Xxxxx Ecosystem",
+            ecosystem:"WIPs Ecosystem",
             ecosystemIcon:"",
             ecosystemHref:"",
             Projects:[
@@ -390,7 +390,7 @@ const Ecosystem = () =>{
         },
         {
 
-            ecosystem:"Xxxxx2 Ecosystem",
+            ecosystem:"EVM Ecosystem",
             ecosystemIcon:"",
             ecosystemHref:"",
             Projects:[
@@ -416,7 +416,7 @@ const Ecosystem = () =>{
         },
         {
 
-            ecosystem:"Xxxxx3 Ecosystem",
+            ecosystem:"Ink! Ecosystem",
             ecosystemIcon:"",
             ecosystemHref:"",
             Projects:[
