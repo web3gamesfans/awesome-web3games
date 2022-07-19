@@ -6,6 +6,7 @@ import { CheckCircleIcon } from "@heroicons/react/outline";
 import Navigation from "../../components/navigation";
 import {useRouter} from "next/router";
 import Link from "next/link";
+import David from "../info";
 
 const mailingLists = [
     { id: 1, title: 'All'},
@@ -22,19 +23,21 @@ const Projects = () =>{
     const [selectedMailingLists, setSelectedMailingLists] = useState(mailingLists[0])
     const router = useRouter()
 
+    const [pathname,setPathname] = useState("")
+    const [data,setData] =useState([])
     useEffect(()=>{
         if (router.isReady){
             const content = router.query.slug[0]
             console.log(router.query.slug[0])
-            console.log(router.pathname)
-
             const fetchUserBounty = async () => {
-                console.log(router.pathname)
+                setPathname(content)
+                console.log(`/projects/${pathname}`)
+                setData(David[content])
             }
             fetchUserBounty()
 
         }
-    },[router.isReady])
+    },[router.isReady,router.query.slug])
     return(
         <>
             <div className="relative  bg-fixed   "
@@ -44,6 +47,11 @@ const Projects = () =>{
                     <div className="text-white">
                         <div className="text-3xl font-semibold">
                             Projects
+                            {data.map(item=>(
+                                <div>
+                                    {item.img}
+                                </div>
+                            ))}
                         </div>
                         <div className="flex mt-2 justify-between items-center">
                             <div>
@@ -83,7 +91,7 @@ const Projects = () =>{
                     </div>
                     <div className="mt-10 flex ">
                         <Navigation/>
-                        <div className="ml-20 grid grid-cols-4 gap-2 text-white">
+                        <div className="ml-20 grid xl:grid-cols-3 2xl:grid-cols-4 gap-2 text-white">
                             <Link href="">
                             <a className="p-6 rounded-xl bg-black transition duration-500 transform  hover:-translate-y-2">
                                 <div className="flex items-center" >
