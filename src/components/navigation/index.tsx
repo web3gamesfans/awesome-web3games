@@ -61,7 +61,8 @@ const Navigation = () =>{
                             {items.sort.map(lists=>(
                                 <div key={lists.list}>
                                     <Link href={`${lists.list}`}>
-                                        <a className="flex justify-between p-2  text-base text-white rounded-md">
+                                        <a className={classNames(`/projects/${lists.list}` == `/projects/${pathname}` ? 'bg-gray-700' : ''
+                                               ,"flex justify-between p-2  text-base text-white rounded-md")}>
                                             <div className=" ">
                                                 {lists.list}
                                             </div>
