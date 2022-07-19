@@ -27,7 +27,7 @@ const Header = () =>{
     }
     return (
         <header>
-            <Popover className="relative bg-white  ">
+            <Popover className="relative bg-black  ">
                 <div className="flex  fixed z-10 inset-x-0  bg-black bg-opacity-85  transition duration-700 mb-10 pl-5 mb-5 justify-between items-center  p-2 sm:px-6 lg:justify-end md:space-x-10 lg:px-10 xl:px-24 2xl:px-48 items-center ">
 
                     <div className=" flex  justify-between lg:justify-start ">
@@ -87,7 +87,7 @@ const Header = () =>{
 
                     {/*手机版*/}
                     <div className="-mr-2  my-0.5 lg:hidden">
-                        <Popover.Button className="bg-white  rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100  ">
+                        <Popover.Button className="bg-black  rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100  ">
                             <span className="sr-only">Open menu</span>
                             <MenuIcon className="h-6 w-6" aria-hidden="true" />
                         </Popover.Button>
@@ -112,7 +112,7 @@ const Header = () =>{
                                     <div className="flex items-center justify-between">
                                         <div>
                                             <img
-                                                className=" w-full"
+                                                className=" w-36"
                                                 src="/AWESOME W3G1.svg"
                                                 alt="Workflow"
                                             />
@@ -142,34 +142,6 @@ const Header = () =>{
                                 <div className="flex justify-center p-5 items-center">
                                     <div className=" w-full   ">
 
-                                        <div className="flex justify-between">
-                                            <Switch
-                                                checked={language}
-                                                onChange={languageChange}
-                                                className={classNames(
-                                                    'relative inline-flex flex-shrink-0 h-7 w-12  border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 items-center bg-gray-200 '
-                                                )}
-                                            >
-                                                <span className="sr-only">Use setting</span>
-
-                                                <span
-                                                    aria-hidden="true"
-                                                    className={classNames(
-
-                                                        'pointer-events-none inline-block   w-5 rounded-full   transform ring-0 transition ease-in-out duration-200'
-                                                    )}
-                                                >
-                                    <div className="flex justify-between items-center  w-12  text-xs">
-                                        <div className={language?"w-12   w-6  py-1":"bg-black rounded-full w-12  w-6 py-1 text-center text-white"}>
-                                                EN
-                                        </div>
-                                         <div className={language?"bg-black rounded-full w-12   w-6  py-1  text-white":"w-12   w-6  py-1"}>
-                                          中
-                                        </div>
-                            </div>
-                                </span>
-                                            </Switch>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

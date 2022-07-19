@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import {useEffect, useState} from "react";
 import David from "../../pages/info";
+import Info from "../../pages/info";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -9,17 +10,17 @@ function classNames(...classes) {
 const navigation = [
     {
         title:"All",
-        number:"6",
+        number:`${Info.All[0].info.length}`,
         sort:[
         ]
     },
     {
-        title:"WIPs",
-        number:"6",
+        title:"DApps",
+        number:`${Info.DApps[0].info.length}`,
         sort:[
             {
                 list:"Gaming",
-                number:"6"
+                number:`${Info.Gaming[0].info.length}`
             },
         ]
     },
@@ -27,7 +28,6 @@ const navigation = [
 const Navigation = () =>{
     const router = useRouter();
     const [pathname,setPathname] = useState("")
-    const [data,setData] =useState({})
     useEffect(()=>{
         if (router.isReady){
             const content = router.query.slug[0]
@@ -35,7 +35,6 @@ const Navigation = () =>{
             const fetchUserBounty = async () => {
                 setPathname(content)
                 console.log(`/projects/${pathname}`)
-                setData(David[content])
             }
             fetchUserBounty()
 
@@ -43,27 +42,27 @@ const Navigation = () =>{
     },[router.isReady,router.query.slug])
     return(
         <>
-            <div className="w-2/12">
+            <div className="md:w-1/12 fixed">
                 {navigation.map(items=>(
                     <div key={items.title}>
                         <Link href={`${items.title}`}>
                             <a className={classNames(`/projects/${items.title}` == `/projects/${pathname}` ? 'bg-gray-700' : ''
-                                ,"flex justify-between p-2  text-xl text-white rounded-md ")}>
+                                ,"flex justify-between p-2 text-sm md:text-xl text-white rounded-md ")}>
                                 <div className=" font-semibold">
                                     {items.title}
                                 </div>
-                                <div className="font-normal text-base">
+                                <div className="font-normal ">
                                     {items.number}
                                 </div>
                             </a>
                         </Link>
-                        <div className="ml-3">
+                        <div className="md:ml-3">
                             {items.sort.map(lists=>(
                                 <div key={lists.list}>
                                     <Link href={`${lists.list}`}>
                                         <a className={classNames(`/projects/${lists.list}` == `/projects/${pathname}` ? 'bg-gray-700' : ''
-                                               ,"flex justify-between p-2  text-base text-white rounded-md")}>
-                                            <div className=" ">
+                                               ,"flex justify-between p-2 text-sm md:text-base text-white rounded-md")}>
+                                            <div className="mr-3 ">
                                                 {lists.list}
                                             </div>
                                             <div className="font-normal ">

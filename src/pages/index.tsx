@@ -15,8 +15,8 @@ const IndexPage: NextPage = () => {
       <main>
         <div>
           <Head>
-            <title>david</title>
-            <link rel="icon" href="/favicon.ico" />
+            <title>Awesome-W3G</title>
+            <link rel="icon" href="/awesomeW3g.ico" />
           </Head>
               <Home></Home>
         </div>
