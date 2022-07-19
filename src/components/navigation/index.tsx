@@ -9,17 +9,17 @@ function classNames(...classes) {
 const navigation = [
     {
         title:"All",
-        number:"706",
+        number:"6",
         sort:[
         ]
     },
     {
-        title:"Aurora",
-        number:"180",
+        title:"WIPs",
+        number:"6",
         sort:[
             {
-                list:"Wallets",
-                number:"31"
+                list:"Gaming",
+                number:"6"
             },
         ]
     },
