@@ -12,7 +12,7 @@ function classNames(...classes) {
 }
 
 const navigation = [
-    { id:1 ,name: 'Projects', href: '/projects' },
+    { id:1 ,name: 'Projects', href: '/projects/All', pathname:"/projects/[...slug]" },
     { id:2 ,name: 'Ranking', href: '#Hackathons' },
     { id:3 ,name: 'Articles', href: '#Activities' },
 
@@ -50,7 +50,7 @@ const Header = () =>{
                         {navigation.map((item) => (
                             <div key={item.name}>
                                 <Link  href={item.href}>
-                                    <a  className={classNames(router.pathname == `${item.href}` ? 'text-blue border-b text-transparent border-b-pink-500' : '',
+                                    <a  className={classNames(router.pathname == `${item.pathname}` ? 'text-blue border-b text-transparent border-b-pink-500' : '',
                                         " py-2.5  leading-5 text-center   font-semibold text-white  hover:text-transparent bg-clip-text    bg-gradient-to-r from-pink-500  to-purple-500")}>
                                             {item.name}
 
