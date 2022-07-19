@@ -6,7 +6,7 @@ import { CheckCircleIcon } from "@heroicons/react/outline";
 import Navigation from "../../components/navigation";
 import {useRouter} from "next/router";
 import Link from "next/link";
-import Info from "../info";
+import Info from "../../info";
 
 const mailingLists = [
     { id: 1, title: 'All'},

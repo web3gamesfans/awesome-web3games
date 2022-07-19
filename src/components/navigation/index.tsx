@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {useEffect, useState} from "react";
-import David from "../../pages/info";
-import Info from "../../pages/info";
+import Info from "../../info";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
