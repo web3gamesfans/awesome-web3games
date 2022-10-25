@@ -47,15 +47,15 @@ const Projects = () =>{
                     <div className="text-white">
                     <div className="mt-10 flex ">
                         <Navigation/>
-                        <div className="ml-24 md:ml-32 xl:ml-48 h-big overflow-y-auto xl:h-full xl:overflow-hidden">
+                        <div className="ml-24 md:ml-32 xl:ml-48 h-full overflow-hidden snap-y snap-mandatory">
                             {data.map(item=>(
-                                <div key={item.title}>
+                                <div key={item.title} className="snap-always snap-center">
                                     <div className="">
                                         <div className="text-3xl font-semibold">
                                             {item.title}
                                         </div>
                                         <div className="md:flex mt-2 justify-between items-center ">
-                                            <div className="h-12">
+                                            <div className="">
                                                 {item.h1}
                                             </div>
                                             <div>
@@ -106,7 +106,7 @@ const Projects = () =>{
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="mt-4 text-sm h-16  overflow-ellipsis overflow-hidden">
+                                            <div className="mt-4 text-sm h-10  line-clamp-2 ">
                                                 {lists.h1}
                                             </div>
                                             <div className="mt-4 flex text-xl justify-between items-center">
